@@ -1,6 +1,7 @@
 import os
 from storage import cargar_datos, guardar_datos
-from coordinador import registrar_camper, registrar_trainer, crear_ruta_entrenamiento, crear_salon_entrenamiento, registrar_examen_inicial, matricular_camper
+from coordinador import registrar_camper, registrar_trainer, crear_ruta_entrenamiento, crear_salon_entrenamiento, registrar_examen_inicial, matricular_camper, asignar_trainer_a_ruta
+from trainer import registrar_nota_modulo, calcular_nota_final_modulo
 
 
 def login(datos):
@@ -45,6 +46,7 @@ def menu_coordinador():
             case "3": crear_ruta_entrenamiento(datos)
             case "4": crear_salon_entrenamiento(datos)
             case "5": registrar_examen_inicial(datos)
+            case "6": asignar_trainer_a_ruta(datos)
             case "7": matricular_camper(datos)
             case "9": break
             case _: print("Opción inválida. Intente nuevamente.")
@@ -60,6 +62,8 @@ def menu_trainer():
         print("4. Salir")
         opc = input("Seleccione una opción: ")
         match opc:
+            case "1": registrar_nota_modulo(datos)
+            case "2": calcular_nota_final_modulo(datos)
             case "4": break
             case _: print("Funcionalidad pendiente.")
         input("Presione Enter para continuar...")

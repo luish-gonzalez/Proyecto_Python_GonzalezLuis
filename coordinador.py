@@ -174,4 +174,47 @@ def matricular_camper(datos):
     guardar_datos(datos)
     mensaje(f"✅ Camper {camper['nombres']} matriculado en {ruta_sel} - {salon_sel}.")
 
+def asignar_trainer_a_ruta(datos):
+    print("\n=== Asignar Trainer a Ruta ===")
+
+    
+    if not datos["rutas"]:
+        mensaje("⚠️ No hay rutas creadas.")
+        return
+    if not datos["trainers"]:
+        mensaje("⚠️ No hay trainers registrados.")
+        return
+
+    print("\nRutas disponibles:")
+    for r in datos["rutas"]:
+        print(f"- {r}")
+
+    ruta_sel = input("Ingrese el nombre exacto de la ruta: ")
+    if ruta_sel not in datos["rutas"]:
+        mensaje("⚠️ Ruta no encontrada.")
+        return
+
+    print("\nTrainers disponibles:")
+    for t in datos["trainers"].values():
+        print(f"- {t['id']} | {t['nombres']} {t['apellidos']}")
+
+    trainer_id = input("Ingrese el ID del trainer a asignar: ")
+    if trainer_id not in datos["trainers"]:
+        mensaje("⚠️ Trainer no encontrado.")
+        return
+
+    ruta = datos["rutas"][ruta_sel]
+    trainer = datos["trainers"][trainer_id]
+
+    
+    if trainer_id in ruta["trainers"]:
+        mensaje(f"⚠️ El trainer {trainer['nombres']} ya está asignado a {ruta_sel}.")
+        return
+
+    
+    ruta["trainers"].append(trainer_id)
+    trainer["rutas_asignadas"].append(ruta_sel)
+
+    guardar_datos(datos)
+    mensaje(f"✅ Trainer {trainer['nombres']} asignado correctamente a {ruta_sel}.")
 
