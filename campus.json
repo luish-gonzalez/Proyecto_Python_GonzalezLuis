@@ -1,6 +1,74 @@
 {
-    "campers": {},
-    "trainers": {},
-    "rutas": {},
-    "salones": {}
+    "campers": {
+        "1096955090": {
+            "id": "1096955090",
+            "nombres": "Hernan",
+            "apellidos": "Ordo\u00f1ez",
+            "direccion": "Calle 29",
+            "acudiente": "Hernan G",
+            "telefono_cel": "3006549871",
+            "telefono_fijo": "6985231",
+            "estado": "Aprobado",
+            "riesgo": "Ninguno",
+            "notas": {
+                "examen_inicial": 70.0
+            }
+        }
+    },
+    "trainers": {
+        "1096951956": {
+            "id": "1096951956",
+            "nombres": "Peter",
+            "apellidos": "Languila",
+            "especialidad": "C#",
+            "rutas_asignadas": []
+        }
+    },
+    "rutas": {
+        "Ruta PHP": {
+            "nombre": "Ruta PHP",
+            "modulos": {
+                "Fundamentos de Programaci\u00f3n": [
+                    "Introducci\u00f3n a la algoritmia",
+                    "PSeInt",
+                    "Python"
+                ],
+                "Programaci\u00f3n Web": [
+                    "HTML",
+                    "CSS",
+                    "Bootstrap"
+                ],
+                "Programaci\u00f3n Formal": [
+                    "Java",
+                    "JavaScript",
+                    "C#"
+                ],
+                "Bases de Datos": [
+                    "Mysql",
+                    "MongoDb",
+                    "Postgresql"
+                ],
+                "Backend": [
+                    "NetCore",
+                    "Spring Boot",
+                    "NodeJS",
+                    "Express"
+                ]
+            },
+            "campers": [],
+            "trainers": []
+        }
+    },
+    "salones": {
+        "Sputnik": {
+            "nombre": "Sputnik",
+            "capacidad": 33,
+            "campers": []
+        },
+        "9": {
+            "nombre": "9",
+            "capacidad": 33,
+            "campers": []
+        }
+    }
 }

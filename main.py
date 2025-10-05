@@ -1,6 +1,6 @@
 import os
 from storage import cargar_datos, guardar_datos, mensaje
-from coordinador import registrar_camper, registrar_trainer, crear_ruta_entrenamiento, crear_salon_entrenamiento, registrar_examen_inicial, matricular_camper, asignar_trainer_a_ruta
+from coordinador import registrar_camper, registrar_trainer, crear_ruta_entrenamiento, crear_salon_entrenamiento, registrar_examen_inicial, matricular_camper, asignar_trainer_a_ruta, cambiar_estado_camper
 from trainer import registrar_nota_modulo, calcular_nota_final_modulo, marcar_riesgo
 from camper import ver_historial_notas
 from reportes import listar_inscritos, listar_aprobados_inicial, listar_trainers, listar_bajo_rendimiento, listar_asociaciones, resumen_aprobados_reprobados
@@ -38,12 +38,13 @@ def menu_coordinador():
         print("1. Registrar Camper")
         print("2. Registrar Trainer")
         print("3. Crear Ruta")
-        print("4. Registrar Examen Inicial")
-        print("5. Cambiar Estado de Camper")
-        print("6. Asignar Trainer a Ruta")
-        print("7. Matricular Camper")
-        print("8. Reportes")
-        print("9. Salir")
+        print("4. Crear Salón")
+        print("5. Registrar Examen Inicial")
+        print("6. Cambiar Estado de Camper")
+        print("7. Asignar Trainer a Ruta")
+        print("8. Matricular Camper")
+        print("9. Reportes")
+        print("0. Salir")
         opc = input("Seleccione una opción: ")
         match opc:
             case "1": registrar_camper(datos)
@@ -51,9 +52,10 @@ def menu_coordinador():
             case "3": crear_ruta_entrenamiento(datos)
             case "4": crear_salon_entrenamiento(datos)
             case "5": registrar_examen_inicial(datos)
-            case "6": asignar_trainer_a_ruta(datos)
-            case "7": matricular_camper(datos)
-            case "8":
+            case "6": cambiar_estado_camper(datos)
+            case "7": asignar_trainer_a_ruta(datos)
+            case "8": matricular_camper(datos)
+            case "9":
                 print("\n=== REPORTES ===")
                 print("1. Campers Inscritos")
                 print("2. Campers Aprobados en Examen Inicial")
@@ -70,7 +72,7 @@ def menu_coordinador():
                     case "5": listar_asociaciones(datos)
                     case "6": resumen_aprobados_reprobados(datos)
                     case _: mensaje("Opción inválida.")
-            case "9": break
+            case "0": break
             case _: print("Opción inválida. Intente nuevamente.")
         input("Presione Enter para continuar...")
 

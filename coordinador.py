@@ -174,6 +174,38 @@ def matricular_camper(datos):
     guardar_datos(datos)
     mensaje(f"✅ Camper {camper['nombres']} matriculado en {ruta_sel} - {salon_sel}.")
 
+def cambiar_estado_camper(datos):
+    print("\n=== Cambio de Estado de Camper (Manual) ===")
+    ident = input("ID del camper: ")
+
+    if ident not in datos["campers"]:
+        mensaje("⚠️ Camper no encontrado.")
+        return
+
+    camper = datos["campers"][ident]
+
+    print(f"\nCamper: {camper['nombres']} {camper['apellidos']} | Estado actual: {camper['estado']}")
+    print("\nSeleccione nuevo estado:")
+    print("1. Inscrito")
+    print("2. Expulsado")
+    print("3. Retirado")
+    opc = input("Opción: ")
+
+    match opc:
+        case "1":
+            camper["estado"] = "Inscrito"
+        case "2":
+            camper["estado"] = "Expulsado"
+        case "3":
+            camper["estado"] = "Retirado"
+        case _:
+            mensaje("Opción inválida.")
+            return
+
+    guardar_datos(datos)
+    mensaje(f"✅ Estado del camper actualizado a: {camper['estado']}")
+
+
 def asignar_trainer_a_ruta(datos):
     print("\n=== Asignar Trainer a Ruta ===")
 
