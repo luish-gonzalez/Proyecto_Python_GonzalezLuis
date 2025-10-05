@@ -40,7 +40,7 @@ def crear_ruta_entrenamiento(datos):
     print("\n=== Crear Ruta de Entrenamiento ===")
     nombre = input("Nombre de la ruta (ej. Ruta NodeJS): ")
 
-    # Validar que no exista otra ruta con el mismo nombre
+    
     if nombre in datos["rutas"]:
         mensaje(f"⚠️ La ruta '{nombre}' ya existe.")
         return
@@ -54,7 +54,7 @@ def crear_ruta_entrenamiento(datos):
         "Backend": ["NetCore", "Spring Boot", "NodeJS", "Express"]
     }
 
-    # Mostrar los módulos fijos
+    
     for key in modulos:
         print(f"- {key}")
 

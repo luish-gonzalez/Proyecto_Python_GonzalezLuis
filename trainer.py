@@ -68,3 +68,38 @@ def calcular_nota_final_modulo(datos):
     guardar_datos(datos)
     mensaje(f"📊 Nota final del módulo '{modulo}': {nota_final:.2f} → {camper['notas'][modulo]['estado']}")
 
+def marcar_riesgo(datos):
+    print("\n=== Marcar Riesgo de Camper ===")
+    ident = input("ID del camper: ")
+
+    if ident not in datos["campers"]:
+        mensaje("⚠️ Camper no encontrado.")
+        return
+
+    camper = datos["campers"][ident]
+
+    if not camper["notas"]:
+        mensaje("⚠️ Este camper no tiene módulos evaluados.")
+        return
+
+    
+    notas_finales = []
+    for modulo, info in camper["notas"].items():
+        if "final" in info:
+            notas_finales.append(info["final"])
+
+    if not notas_finales:
+        mensaje("⚠️ No hay notas finales calculadas para este camper.")
+        return
+
+    
+    if any(n < 60 for n in notas_finales):
+        camper["riesgo"] = "Alto"
+    elif any(60 <= n < 70 for n in notas_finales):
+        camper["riesgo"] = "Bajo"
+    else:
+        camper["riesgo"] = "Ninguno"
+
+    guardar_datos(datos)
+    mensaje(f"📋 Riesgo de {camper['nombres']} actualizado a: {camper['riesgo']}")
+
