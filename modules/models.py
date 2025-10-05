@@ -1,4 +1,4 @@
-from storage import mensaje
+from modules.storage import mensaje
 
 def crear_camper(ident, nombres, apellidos, direccion, acudiente, tel_cel, tel_fijo):
     return {

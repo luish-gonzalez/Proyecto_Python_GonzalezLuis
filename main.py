@@ -1,10 +1,9 @@
 import os
-from storage import cargar_datos, guardar_datos, mensaje
-from coordinador import registrar_camper, registrar_trainer, crear_ruta_entrenamiento, crear_salon_entrenamiento, registrar_examen_inicial, matricular_camper, asignar_trainer_a_ruta, cambiar_estado_camper
-from trainer import registrar_nota_modulo, calcular_nota_final_modulo, marcar_riesgo
-from camper import ver_historial_notas
-from reportes import listar_inscritos, listar_aprobados_inicial, listar_trainers, listar_bajo_rendimiento, listar_asociaciones, resumen_aprobados_reprobados
-
+from modules.storage import cargar_datos, guardar_datos, mensaje
+from modules.coordinador import registrar_camper, registrar_trainer, crear_ruta_entrenamiento, crear_salon_entrenamiento, registrar_examen_inicial, matricular_camper, asignar_trainer_a_ruta, cambiar_estado_camper
+from modules.trainer import registrar_nota_modulo, calcular_nota_final_modulo, marcar_riesgo
+from modules.camper import ver_historial_notas
+from modules.reportes import listar_inscritos, listar_aprobados_inicial, listar_trainers, listar_bajo_rendimiento, listar_asociaciones, resumen_aprobados_reprobados
 
 
 

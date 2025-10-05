@@ -1,4 +1,4 @@
-from storage import mensaje
+from modules.storage import mensaje
 
 def ver_historial_notas(datos, ident):
     print("\n=== Historial Académico del Camper ===")

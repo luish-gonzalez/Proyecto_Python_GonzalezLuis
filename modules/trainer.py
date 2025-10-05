@@ -1,4 +1,4 @@
-from storage import guardar_datos, mensaje
+from modules.storage import guardar_datos, mensaje
 
 def registrar_nota_modulo(datos):
     print("\n=== Registrar Notas de Módulo ===")

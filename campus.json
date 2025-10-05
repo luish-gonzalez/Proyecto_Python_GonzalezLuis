@@ -21,7 +21,9 @@
             "nombres": "Peter",
             "apellidos": "Languila",
             "especialidad": "C#",
-            "rutas_asignadas": []
+            "rutas_asignadas": [
+                "Ruta PHP"
+            ]
         }
     },
     "rutas": {
@@ -56,7 +58,9 @@
                 ]
             },
             "campers": [],
-            "trainers": []
+            "trainers": [
+                "1096951956"
+            ]
         }
     },
     "salones": {

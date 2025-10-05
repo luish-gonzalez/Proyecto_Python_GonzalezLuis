@@ -1,5 +1,5 @@
-from storage import guardar_datos, mensaje
-from models import crear_camper, crear_trainer, id_disponible, crear_ruta, crear_salon
+from modules.storage import guardar_datos, mensaje
+from modules.models import crear_camper, crear_trainer, id_disponible, crear_ruta, crear_salon
 
 def registrar_camper(datos):
     print("\n=== Registrar Camper ===")

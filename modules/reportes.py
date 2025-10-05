@@ -1,4 +1,4 @@
-from storage import mensaje
+from modules.storage import mensaje
 
 def listar_inscritos(datos):
     print("\n=== Campers Inscritos ===")
